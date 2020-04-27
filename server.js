@@ -50,7 +50,15 @@ app.get ("/reserve", function (req,res) {
 app.get ("/tables", function (req,res) {
     console.log ("View Tables");
     res.sendFile(path.join(__dirname, "view.html"));
-})
+});
+
+app.get ("/api/tables", function (req, res) {
+    console.log ("Tables API Call");
+});
+
+app.get ("/api/waitlist", function () {
+    console.log ("Tables Waitlist API Call");
+});
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
