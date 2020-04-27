@@ -54,10 +54,12 @@ app.get ("/tables", function (req,res) {
 
 app.get ("/api/tables", function (req, res) {
     console.log ("Tables API Call");
+    res.sendFile(path.join(__dirname, "test.html"));
 });
 
-app.get ("/api/waitlist", function () {
+app.get ("/api/waitlist", function (req,res) {
     console.log ("Tables Waitlist API Call");
+    res.sendFile(path.join(__dirname, "test.html"));
 });
 
 app.listen(PORT, function() {
